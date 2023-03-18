@@ -14,7 +14,7 @@ export default function Landing() {
                 <img src={ CloudIcon } alt="cloud icon" className='w-14'/>
             </div>
             <div>
-                <h2 className='font-bold text-[#0F4264] text-2xl'>NEM Insurance Plc</h2>
+                <h2 className='font-bold text-[#0F4264] text-2xl font-quicksand'>NEM Insurance Plc</h2>
             </div>
         </div>
         <div className='pt-10'>

@@ -8,7 +8,12 @@ module.exports = {
     extend: {
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
-      }
+        quicksand: ['Quicksand', 'sans-serif'],
+        dmSans: ['DM Sans', 'sans-serif'],
+      },
+      dropShadow: {
+        primary: ' 4px 4px 20px rgba(92, 92, 92, 0.1)',
+      },
     },
   },
   plugins: [],
