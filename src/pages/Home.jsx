@@ -16,13 +16,13 @@ export default function Home() {
                     user
                 </NavLink>
                 <NavLink
-                    to={'/'}
+                    to={'/staffLogin'}
                     className={'font-bold px-6 py-3 bg-[#FBFBFB] shadow-md'}
                 >
                     staff
                 </NavLink>
                 <NavLink
-                    to={'/'}
+                    to={'/adminLogin'}
                     className={'font-bold px-6 py-3 bg-[#FBFBFB] shadow-md'}
                 >
                     admin
