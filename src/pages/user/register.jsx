@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
 import { 
     IncompleteProgressBar,
     CompleteProgressBar, 
@@ -16,6 +16,7 @@ import Input from '../../components/atoms/input'
 import { Dialog, Transition } from '@headlessui/react'
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/common/header';
+import AuthLayout from '../../layout/authLayout';
 
 
 const people = [
@@ -35,6 +36,7 @@ export default function Register() {
     let [isOpen, setIsOpen] = useState(false)
     const [selected, setSelected] = useState(people[0])
     const navigate = useNavigate();
+    const [rest, setRest] = useState(null)
     function closeModal() {
         setIsOpen(false)
     }
@@ -51,7 +53,7 @@ export default function Register() {
     }
   return (
     <div>
-            <>
+      <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -109,16 +111,16 @@ export default function Register() {
         </Dialog>
       </Transition>
     </>
-        <Header className={"animated-div absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"}/>
-        <div className='flex justify-center items-center w-full pt-32'>
-            <div className='w-1/2 flex flex-col justify-center items-center font-dmSans'>
-                <div className=' font-bold  text-center text-black'>
-                    <h2 className='text-3xl'>Fill the <span className='text-[#4F4F4F] '>FORM</span> below</h2>
-                    <h5 className='px-32 text-lg py-3 text-[#BDBDBD]'>You will be sent a confirmation mail when your reservation has been confirmed</h5>
-                </div>
-                <div className="w-[75%]  my-4 h-max pb-10 flex  items-center flex-col rounded-lg shadow-xl">
 
-                    <form action="" method="post"  onSubmit={(e)=>{
+    <AuthLayout 
+    heading={!rest && (
+      <React.Fragment>
+        Fill the <span className="text-[#4F4F4F]">FORM</span> below
+      </React.Fragment>
+    )}
+    >
+      
+ <form action="" method="post"  onSubmit={(e)=>{
                         e.preventDefault()
                         if(step==1){
                              setStep(2)
@@ -167,10 +169,7 @@ export default function Register() {
                             </div>
                         </div> ) : setStep(1)}
                     </form>
-                </div>
-            </div>
-            
-        </div>
+    </AuthLayout>
     </div>
   )
 }
