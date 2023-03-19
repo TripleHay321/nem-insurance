@@ -10,6 +10,7 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         quicksand: ['Quicksand', 'sans-serif'],
         dmSans: ['DM Sans', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       dropShadow: {
         primary: ' 4px 4px 20px rgba(92, 92, 92, 0.1)',
